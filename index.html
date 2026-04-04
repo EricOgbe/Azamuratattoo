@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Danfo&family=Nosifer&family=Plaster&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZAMURA TATTOO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">AZAMURA</div>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#over-ons">Over Ons</a></li>
+                <li><a class="cta" href="#contact">Boek een afspraak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main id="home">
+        <div id="hero-text">
+         <h1>BOEK JOUW <br>TATTOO AFSPRAAK<br><span class="vandaag">VANDAAG</span></h1>
+         <!-- <p class="hero-sub">Geen Wachttijd. Direct Contact Met Artiest</p> -->
+        <a class="cta hero-cta" href="#contact">Boek een afspraak</a>
+        </div>
+
+        <div id="hero-space"></div>
+        
+    </main>
+    <!-- other sections -->
+     <section id="over-ons" class="nosifer-regular">
+        <h2 class="over-ons-text">Waarom Kiezen Voor Ons?</h2>
+        <p class="over-ons-desc">Wij bieden een snelle, persoonlijke en professionele ervaring voor jouw volgende tattoo. Boek eenvoudig online en laat ons jouw idee tot leven brengen.</p>
+        <div class="card-container">
+            <div class="over-ons-card">
+                <div class="card-icon"><i class="fas fa-check"></i></div>
+                <h4>Snel Afspraak</h4>
+                <p>Plan binnen 48 uur je sessie en begin snel met je nieuwe tattoo.</p>
+            </div>
+            <div class="over-ons-card">
+                <div class="card-icon"><i class="fas fa-star"></i></div>
+                <h4>Uniek Design</h4>
+                <p>Een tattoo die speciaal voor jou is vormgegeven door onze artiesten.</p>
+            </div>
+            <div class="over-ons-card">
+                <div class="card-icon"><i class="fas fa-heart"></i></div>
+                <h4>Persoonlijke Zorg</h4>
+                <p>Volledige aandacht voor jouw comfort en een vlekkeloze nazorg.</p>
+            </div>
+        </div>
+     </section>
+
+     <section id="contact">
+        <div class="contact-container">
+            <div class="contact-message">
+                <h2>Klaar voor jouw Tattoo?</h2>
+                <p>Neem contact met ons op voor een vrijblijvend gesprek. Wij helpen je graag bij het realiseren van jouw droomtattoo.</p>
+                <p><strong>Openingstijden:</strong><br>
+                Maandag - Vrijdag: 10:00 - 20:00<br>
+                Zaterdag: 10:00 - 18:00<br>
+                Zondag: Gesloten</p>
+            </div>
+            <div class="contact-form">
+                <h3>Boek een Consult</h3>
+                <form action="https://formspree.io/f/xeeppgqz" method="POST" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Naam</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefoonnummer</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Verstuur</button>
+                </form>
+                <div id="formMessage" style="display: none; margin-top: 20px; padding: 15px; background: #d4edda; color: #155724; border-radius: 8px; text-align: center;">
+                    Bedankt! We nemen binnen 24 uur contact met je op.
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Show success message after form submission
+            setTimeout(function() {
+                document.getElementById('formMessage').style.display = 'block';
+                // Scroll to message
+                document.getElementById('formMessage').scrollIntoView({ behavior: 'smooth' });
+            }, 1000);
+        });
+     </script>
+</body>
+</html>
